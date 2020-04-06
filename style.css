@@ -1,0 +1,9 @@
+html {
+    background-color: white;
+}
+.title {
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+}
