@@ -1,47 +1,58 @@
-document.addEventListener("DOMContentLoaded", function(){
-    var ctx = document.getElementById('myChart').getContext('2d');
+function submitBtn (buttonId) {
+    let goalNum = buttonId.slice(buttonId.length -1)
+    let funcId = {
+        origianl: buttonId,
+        input: "goalInp" + goalNum,
+        Quan: "goalQuan" + goalNum,
+        units: "units" + goalNum,
+        Goal: "GoalName" + goalNum,
+        chartName: "myChart" + goalNum,
+        form: "form" + goalNum,
+    }
+    let Goals = {
+        name: document.getElementById(funcId.input).value,
+        Quantity: document.getElementById(funcId.Quan).value,
+        units: document.getElementById(funcId.units).value,
+        current: 5,
+    }
+
+    changeHTML(funcId);
+    LoadChart(funcId, Goals);
+    console.log(funcId);
+}
+function changeHTML (funcId) {
+    let GoalName = document.getElementById(funcId.input).value;
+    document.getElementById(funcId.Goal).textContent = GoalName;
+    document.getElementById(funcId.chartName).style.display = 'block';
+    document.getElementById(funcId.form).style.display = 'none';
+}
+function LoadChart (funcId, Goals) {
+    var ctx = document.getElementById(funcId.chartName).getContext('2d');
     var chart = new Chart(ctx, {
         type: 'bar',
             data: {
-                labels: ["Goal:1"],
+                labels: [Goals.units],
                 datasets: [{
-                    label: 'Goal 1',
+                    label: "Current Value",
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: [50,]
+                    data: [Goals.current]
+                    },{
+                    label: "Goal",
+                    backgroundColor: "rgb(135,206,235)",
+                    borderColor: "rgb(135,206,235)",
+                    data: [Goals.Quantity]
                     }]
                 },
                 options: {
+                    scales: {
+                        xAxes: [{
+                            stacked: true
+                        }],
+                        yAxes: [{
+                            stacked: true
+                        }]
+                    }
                 }
                 });
-    var ctx2 = document.getElementById('myChart2').getContext('2d');
-    var myChart2 = new Chart(ctx2, {
-        type: 'bar',
-            data: {
-                labels: ["Goal:1"],
-                datasets: [{
-                    label: 'Goal 1',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [50,]
-                    }]
-                },
-                options: {
-                }
-                });   
-    var ctx3 = document.getElementById('myChart3').getContext('2d');
-    var myChart3 = new Chart(ctx3, {
-        type: 'bar',
-            data: {
-                labels: ["Goal:1"],
-                datasets: [{
-                    label: 'Goal 1',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [50,]
-                    }]
-                },
-                options: {
-                }
-                });    
-});
+}

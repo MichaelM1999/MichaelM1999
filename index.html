@@ -16,16 +16,34 @@
         <div class="container">
             <div class="row" >
                 <div class="col">
-                    <h2 class="title">Goal 1</h2>
-                    <canvas id="myChart"></canvas>
+                    <h2 class="title" id="GoalName1">Goal 1</h2>
+                    <canvas id="myChart1" style="display: none;"></canvas>
+                        <form id="form1">
+                            <input id="goalInp1" class="goalInp" name="Goal1" placeholder="Goal" type="text">
+                            <input id="goalQuan1" class="goalInp" name="Goal1Quantity" placeholder="300" type="number">
+                            <input id="units1" class="goalInp" name="units1" placeholder="Units (Ex: Dollars, $, Units)" type="text">
+                            <button id="goalBtn1" type="button" name="Submit" onclick="submitBtn('goalBtn1')">Submit</button>
+                        </form>
                 </div>
                 <div class="col">
-                    <h2 class="title">Goal 2</h2>
-                    <canvas id="myChart2"></canvas>
+                    <h2 class="title" id="GoalName2">Goal 2</h2>
+                    <canvas id="myChart2" style="display: none;"></canvas>
+                    <form id="form2">
+                        <input id="goalInp2" class="goalInp" name="Goal2" placeholder="Goal" type="text">
+                        <input id="goalQuan2" class="goalInp" name="Goal2Quantity" placeholder="300" type="number">
+                        <input id="units2" class="goalInp" name="units2" placeholder="Units (Ex: Dollars, $, Units)" type="text">
+                        <button id="goalBtn2" type="button" name="Submit" onclick="submitBtn('goalBtn2')">Submit</button>
+                    </form>
                 </div>
                 <div class="col">
-                    <h2 class="title">Goal 3</h2>
-                    <canvas id="myChart3"></canvas>
+                    <h2 class="title" id="GoalName3">Goal 3</h2>
+                    <canvas id="myChart3" style="display: none;"></canvas>
+                    <form id="form3">
+                        <input id="goalInp3" class="goalInp" name="Goal3" placeholder="Goal" type="text">
+                        <input id="goalQuan3" class="goalInp" name="Goal3Quantity" placeholder="300" type="number">
+                        <input id="units3" class="goalInp" name="units3" placeholder="Units (Ex: Dollars, $, Units)" type="text">
+                        <button id="goalBtn3" type="button" name="Submit" onclick="submitBtn('goalBtn3')">Submit</button>
+                    </form>
                 </div>
             </div>   
         </div>
