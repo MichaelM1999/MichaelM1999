@@ -8,12 +8,13 @@ function submitBtn (buttonId) {
         Goal: "GoalName" + goalNum,
         chartName: "myChart" + goalNum,
         form: "form" + goalNum,
+        current: 'current' + goalNum,
     }
     let Goals = {
         name: document.getElementById(funcId.input).value,
         Quantity: document.getElementById(funcId.Quan).value,
         units: document.getElementById(funcId.units).value,
-        current: 5,
+        current: document.getElementById(funcId.current).value,
     }
 
     changeHTML(funcId);
@@ -41,7 +42,7 @@ function LoadChart (funcId, Goals) {
                     label: "Goal",
                     backgroundColor: "rgb(135,206,235)",
                     borderColor: "rgb(135,206,235)",
-                    data: [Goals.Quantity]
+                    data: [(Goals.Quantity)-(Goals.current)]
                     }]
                 },
                 options: {
