@@ -53,7 +53,9 @@ function LoadChart (funcId, Goals) {
                         yAxes: [{
                             stacked: true
                         }]
-                    }
+                    },
+                    tooltips: {enabled: false},
+                    hover: {mode: null},
                 }
                 });
 }
