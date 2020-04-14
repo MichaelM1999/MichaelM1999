@@ -69,12 +69,16 @@ function logInPage () {
 function loginForm() {
     let username = document.getElementById("username").value
     let Password = document.getElementById("Password").value
-    sessionStorage.setItem("Username", username);
-    sessionStorage.setItem("Password", Password);
-    document.getElementById("LoginPage").style.display = 'none';
-    document.getElementById("MainPage").style.display = 'block';
-    document.getElementById("WelcomeTxt").style.display = 'block';
-    document.getElementById("WelcomeTxt").innerHTML = "Welcome " + username;
+    if (username === "" || Password === ""){
+        alert("Must enter a valid username and password")
+    } else {
+        sessionStorage.setItem("Username", username);
+        sessionStorage.setItem("Password", Password);
+        document.getElementById("LoginPage").style.display = 'none';
+        document.getElementById("MainPage").style.display = 'block';
+        document.getElementById("WelcomeTxt").style.display = 'block';
+        document.getElementById("WelcomeTxt").innerHTML = "Welcome " + username;
+    }
 }
 function logoutB() {
     sessionStorage.clear();

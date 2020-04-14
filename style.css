@@ -7,3 +7,67 @@ html {
     margin-top: 2.5%;
     margin-bottom: 5%;
 }
+#loginForm {
+    text-align: center;
+    background-color: lightblue;
+    width: 50%;
+    margin-left: 25%;
+    padding: 30px;
+}
+.Welcome {
+    text-align: center;
+    background-color: lightblue;
+    width: 80%;
+    margin-left: 10%;
+}
+.btns {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 2px;
+  }
+  
+  .btns span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btns span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btns:hover span {
+    padding-right: 25px;
+  }
+  
+  .btns:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  #logoutBtn {
+      text-align: center;
+      width: 10%;
+      margin-left: 45%;
+      margin-top: 30px;
+  }
+  #logBtn {
+      text-align: center;
+      width: 20%;
+      padding: 10px;
+      margin-left: 40%;
+      margin-top: 20%;
+  }

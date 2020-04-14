@@ -14,7 +14,7 @@
 <body>
     <nav>
         <h1 class="title">Personal Investment Tracker</h1>
-        <button id="logBtn" type="button" onclick="logInPage()" style="display: block;">Log-In</button>
+        <button id="logBtn" class="btns" type="button" onclick="logInPage()" style="display: block;"><span>Log-In</span></button>
         <h2 class="Welcome" id="WelcomeTxt" style="display: none;"></h2>
     </nav>
         <div class="container" id="LoginPage" style="display: none;">
@@ -23,8 +23,8 @@
                     <h2 class="loginTitle">
                         <form id="loginForm">
                             <input id="username" class="loginInp" name="username" placeholder="Username" type="text">
-                            <input id="Password" class="loginInp" name="Password" placeholder="Password" type="password">
-                            <button id="loginBtn" class="btns" name="login" type="button" onclick="loginForm()">Log-In</button>
+                            <input id="Password" class="loginInp" name="Password" placeholder="Password" type="password"><br>
+                            <button id="loginBtn" class="btns" name="login" type="button" onclick="loginForm()"><span>Log-In</span></button>
                         </form>
                     </h2>
                 </div>
@@ -40,7 +40,7 @@
                             <input id="goalQuan1" class="goalInp" name="Goal1Quantity" placeholder="Goal Amount" type="number">
                             <input id="units1" class="goalInp" name="units1" placeholder="Units (Ex: Dollars, $, Units)" type="text">
                             <input id="current1" class="goalInp" name="current1" placeholder="Current Status" type="number">
-                            <button id="goalBtn1" type="button" name="Submit" onclick="submitBtn('goalBtn1')">Submit</button>
+                            <button id="goalBtn1" class="btns" type="button" name="Submit" onclick="submitBtn('goalBtn1')"><span>Submit</span></button>
                         </form>
                 </div>
                 <div class="col">
@@ -51,7 +51,7 @@
                         <input id="goalQuan2" class="goalInp" name="Goal2Quantity" placeholder="Goal Amount" type="number">
                         <input id="units2" class="goalInp" name="units2" placeholder="Units (Ex: Dollars, $, Units)" type="text">
                         <input id="current2" class="goalInp" name="current2" placeholder="Current Status" type="number">
-                        <button id="goalBtn2" type="button" name="Submit" onclick="submitBtn('goalBtn2')">Submit</button>
+                        <button id="goalBtn2" class="btns" type="button" name="Submit" onclick="submitBtn('goalBtn2')"><span>Submit</span></button>
                     </form>
                 </div>
                 <div class="col">
@@ -62,14 +62,14 @@
                         <input id="goalQuan3" class="goalInp" name="Goal3Quantity" placeholder="Goal Amount" type="number">
                         <input id="units3" class="goalInp" name="units3" placeholder="Units (Ex: Dollars, $, Units)" type="text">
                         <input id="current3" class="goalInp" name="current3" placeholder="Current Status" type="number">
-                        <button id="goalBtn3" type="button" name="Submit" onclick="submitBtn('goalBtn3')">Submit</button>
+                        <button id="goalBtn3" class="btns" type="button" name="Submit" onclick="submitBtn('goalBtn3')"><span>Submit</span></button>
                     </form>
                 </div>
             </div>  
             <br>
             <div class="row">
                 <div class="col">
-                    <button id="logoutBtn" class="btns" type="button" name="logout" onclick="logoutB()">Log-Out</button>
+                    <button id="logoutBtn" class="btns" type="button" name="logout" onclick="logoutB()"><span>Log-Out</span></button>
                 </div>
             </div>
         </div>
