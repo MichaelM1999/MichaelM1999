@@ -12,8 +12,25 @@
   <script src="controller.js"></script>
 </head>
 <body>
-    <h1 class="title">Personal Investment Tracker</h1>
-        <div class="container">
+    <nav>
+        <h1 class="title">Personal Investment Tracker</h1>
+        <button id="logBtn" type="button" onclick="logInPage()" style="display: block;">Log-In</button>
+        <h2 class="Welcome" id="WelcomeTxt" style="display: none;"></h2>
+    </nav>
+        <div class="container" id="LoginPage" style="display: none;">
+            <div class="row">
+                <div class="col">
+                    <h2 class="loginTitle">
+                        <form id="loginForm">
+                            <input id="username" class="loginInp" name="username" placeholder="Username" type="text">
+                            <input id="Password" class="loginInp" name="Password" placeholder="Password" type="password">
+                            <button id="loginBtn" class="btns" name="login" type="button" onclick="loginForm()">Log-In</button>
+                        </form>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="MainPage" style="display: none;">
             <div class="row" >
                 <div class="col">
                     <h2 class="title" id="GoalName1">Goal 1</h2>

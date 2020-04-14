@@ -59,3 +59,26 @@ function LoadChart (funcId, Goals) {
                 }
                 });
 }
+function logInPage () {
+    const logBtn = document.getElementById('logBtn')
+    // 1. show login 'page' 
+    // 2. button needs to be a log out btn when logged 
+    // 3. if 'logged' logout
+    //4. if not logged login
+        document.getElementById("LoginPage").style.display = 'block';
+        logBtn.style.display = 'none';
+        logBtn.innerHTML = 'Log-Out';
+        console.log(logBtn.innerHTML)
+}
+function loginForm() {
+    //1. show main page 
+    //2. show main logg btn and change to say log out 
+    let username = document.getElementById("username").value
+    let Password = document.getElementById("Password").value
+    sessionStorage.setItem("Username", username);
+    sessionStorage.setItem("Password", Password);
+    document.getElementById("LoginPage").style.display = 'none';
+    document.getElementById("MainPage").style.display = 'block';
+    document.getElementById("WelcomeTxt").style.display = 'block';
+    document.getElementById("WelcomeTxt").innerHTML = "Welcome " + username;
+}
