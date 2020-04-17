@@ -17,10 +17,12 @@ function submitBtn (buttonId) {
         Quantity: document.getElementById(funcId.Quan).value,
         units: document.getElementById(funcId.units).value,
         current: document.getElementById(funcId.current).value,
+        user: sessionStorage.getItem("username")
     }
 
     changeHTML(funcId);
     LoadChart(funcId, Goals);
+    goalPost(funcId);
     console.log(funcId);
 }
 function changeHTML (funcId) {
@@ -99,6 +101,14 @@ function logoutB() {
 //userlogin working needs database wiring
 function userLoginInfo (userInfo) {
     axios.post(uri + '/user/login', userInfo)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(error => console.error(error.response));
+}
+//user add goal 
+function goalPost (goal) {
+    axios.post(uri + '/goal/add', goal)
     .then(res => {
         console.log(res);
     })

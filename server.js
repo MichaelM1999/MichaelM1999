@@ -19,7 +19,12 @@ app.get('/',function(req,res){
 //routes
 router.route('/user/login').post((req, res) => {
     console.log('welcome ' + req.body.username);
-    res.send('welcome ' + req.body.username)
+    res.send('welcome ' + req.body.username);
+})
+
+router.route('/goal/add').post((req, res) => {
+    console.log(req.body);
+    res.send("goal recieved " + req.body);
 })
 //test route
 router.route('/foo').post((req, res) => {
