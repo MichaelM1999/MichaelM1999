@@ -9,12 +9,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="controller.js"></script>
 </head>
 <body>
     <nav>
         <h1 class="title">Personal Investment Tracker</h1>
         <button id="logBtn" class="btns" type="button" onclick="logInPage()" style="display: block;"><span>Log-In</span></button>
+        <button id="logBtn" class="btns" type="button" onclick="fool()" style="display: block;"><span>Log-In</span></button>
         <h2 class="Welcome" id="WelcomeTxt" style="display: none;"></h2>
     </nav>
         <div class="container" id="LoginPage" style="display: none;">

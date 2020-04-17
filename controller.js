@@ -1,3 +1,5 @@
+// import axios from 'axios';
+const uri = "http://localhost:4202"
 function submitBtn (buttonId) {
     let goalNum = buttonId.slice(buttonId.length -1)
     let funcId = {
@@ -86,4 +88,12 @@ function logoutB() {
     document.getElementById("LoginPage").style.display = 'block';
     document.getElementById("WelcomeTxt").innerHTML = "";
     document.getElementById("WelcomeTxt").style.display = 'none';
+}
+//backend functions
+function fool () {
+    axios.post(uri + '/foo')
+    .then(res => {
+        console.log(res);
+    })
+    .catch(error => console.error(error.response));
 }

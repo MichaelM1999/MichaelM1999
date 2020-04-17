@@ -15,6 +15,13 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
   //__dirname : It will resolve to your project folder.
 });
+//routes
+router.route('/foo').post((req, res) => {
+console.log('foo route');
+res.send("fooooooo route");
+})
+
+app.use('/', router);
 
 app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
