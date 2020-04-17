@@ -71,15 +71,21 @@ function logInPage () {
 function loginForm() {
     let username = document.getElementById("username").value
     let Password = document.getElementById("Password").value
+    
     if (username === "" || Password === ""){
         alert("Must enter a valid username and password")
     } else {
+        let userInfo = {
+            username: username,
+            password: Password
+        }
         sessionStorage.setItem("Username", username);
         sessionStorage.setItem("Password", Password);
         document.getElementById("LoginPage").style.display = 'none';
         document.getElementById("MainPage").style.display = 'block';
         document.getElementById("WelcomeTxt").style.display = 'block';
         document.getElementById("WelcomeTxt").innerHTML = "Welcome " + username;
+        userLoginInfo(userInfo);
     }
 }
 function logoutB() {
@@ -90,6 +96,15 @@ function logoutB() {
     document.getElementById("WelcomeTxt").style.display = 'none';
 }
 //backend functions
+//userlogin working needs database wiring
+function userLoginInfo (userInfo) {
+    axios.post(uri + '/user/login', userInfo)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(error => console.error(error.response));
+}
+//test function
 function fool () {
     axios.post(uri + '/foo')
     .then(res => {
