@@ -71,8 +71,8 @@ function logInPage () {
         console.log(logBtn.innerHTML)
 }
 function loginForm() {
-    let username = document.getElementById("username").value
-    let Password = document.getElementById("Password").value
+    let username = document.getElementById("username").value;
+    let Password = document.getElementById("Password").value;
     
     if (username === "" || Password === ""){
         alert("Must enter a valid username and password")
@@ -90,6 +90,45 @@ function loginForm() {
         userLoginInfo(userInfo);
     }
 }
+function AccountForm() {
+    //if account exists dont login
+    let username = document.getElementById("usernameA").value;
+    let password = document.getElementById("PasswordA").value;
+    let confirmP = document.getElementById("PasswordB").value;
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+
+    if (username === ""){
+        alert("Must have valid username.");
+    }
+    if (password === ""){
+        alert("Must have valid password.");
+    }
+    if (confirmP === ""){
+        alert("Must confirm password.");
+    }
+    if (firstName === ""){
+        alert("Must have valid first name.");
+    }
+    if (lastName === ""){
+        alert("Must have valid last name.");
+    }
+    if (password !== confirmP){
+        alert("passwords must match.");
+    }
+    if (password.length < 6 || password.includes("1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9") === false){
+        alert("Password must have more the 6 charaters and contain a number.")
+    }
+    else {
+        let userAccount = {
+            username: username,
+            password: password,
+            firstName: firstName,
+            lastName: lastName,
+        }
+        userCreate(userAccount);
+    }
+}
 function logoutB() {
     sessionStorage.clear();
     document.getElementById('MainPage').style.display = 'none';
@@ -98,6 +137,15 @@ function logoutB() {
     document.getElementById("WelcomeTxt").style.display = 'none';
 }
 //backend functions
+//create user
+function userCreate (userInfo) {
+    //check if user exists if it does throw error and stay at acount screen
+    axios.post(uri + '/user/create', userInfo)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(error => console.error(error.response));
+}
 //userlogin working needs database wiring
 function userLoginInfo (userInfo) {
     axios.post(uri + '/user/login', userInfo)

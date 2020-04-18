@@ -3,6 +3,8 @@ var app = express();
 var path = require("path");
 const cors = require('cors');
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const Model = require('./models/index');
 
 var PORT = process.env.PORT || 4202;
 const router = express.Router();
@@ -17,6 +19,11 @@ app.get('/',function(req,res){
 });
 
 //routes
+router.route('/user/create').post((req, res) => {
+    console.log('welcome ' + req.body);
+    res.send('welcome ' + req.body);
+})
+
 router.route('/user/login').post((req, res) => {
     console.log('welcome ' + req.body.username);
     res.send('welcome ' + req.body.username);
