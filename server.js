@@ -21,7 +21,7 @@ app.get('/',function(req,res){
 //routes
 router.route('/user/create').post((req, res) => {
     console.log('welcome ' + req.body);
-    res.send('welcome ' + req.body);
+    res.send('welcome ' + req.body.username + " " + req.body.password );
 })
 
 router.route('/user/login').post((req, res) => {

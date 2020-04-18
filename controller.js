@@ -66,6 +66,8 @@ function LoadChart (funcId, Goals) {
 function logInPage () {
         const logBtn = document.getElementById('logBtn')
         document.getElementById("LoginPage").style.display = 'block';
+        document.getElementById('AccountBtn').style.display = 'none';
+        document.getElementById('CreateAccountPage').style.display = 'none';
         logBtn.style.display = 'none';
         logBtn.innerHTML = 'Log-Out';
         console.log(logBtn.innerHTML)
@@ -90,11 +92,17 @@ function loginForm() {
         userLoginInfo(userInfo);
     }
 }
+function AccountPage() {
+    const accountBtn = document.getElementById('AccountBtn');
+    document.getElementById('CreateAccountPage').style.display = 'block';
+    document.getElementById('logBtn').style.display = 'block';
+    accountBtn.style.display = 'none';
+}
 function AccountForm() {
     //if account exists dont login
     let username = document.getElementById("usernameA").value;
     let password = document.getElementById("PasswordA").value;
-    let confirmP = document.getElementById("PasswordB").value;
+    let confirmP = document.getElementById("Confirm").value;
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
 
