@@ -145,7 +145,7 @@ function logoutB() {
     document.getElementById("WelcomeTxt").style.display = 'none';
 }
 //backend functions
-//create user
+//create user needs wiring
 function userCreate (userInfo) {
     //check if user exists if it does throw error and stay at acount screen
     axios.post(uri + '/user/create', userInfo)
