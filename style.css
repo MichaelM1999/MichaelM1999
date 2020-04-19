@@ -97,6 +97,12 @@ right: 0;
     margin-left: 40%;
     margin-top: 20%;
 }
+#logoutBtn {
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+    margin-left: 40%;
+}
 #AccountBtn {
     text-align: center;
     width: 20%;
