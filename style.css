@@ -7,7 +7,7 @@ html {
     margin-top: 2.5%;
     margin-bottom: 5%;
 }
-#loginForm {
+.landingForms {
     text-align: center;
     background-color: lightblue;
     width: 50%;
@@ -58,6 +58,32 @@ padding-right: 25px;
 opacity: 1;
 right: 0;
 }
+.loginInp .loginInpA {
+    width: 350px;
+}
+.loginInpA {
+    width: 350px;
+}
+#loginBtn {
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+}
+#loginBtn1 {
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+}
+#loginBtnA {
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+}
+#loginBtnAA {
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+}
 #logoutBtn {
     text-align: center;
     width: 10%;
@@ -70,6 +96,12 @@ right: 0;
     padding: 10px;
     margin-left: 40%;
     margin-top: 20%;
+}
+#AccountBtn {
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+    margin-left: 40%;
 }
 .goalform {
     text-align: center;

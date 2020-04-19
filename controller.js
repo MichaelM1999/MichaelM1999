@@ -95,8 +95,9 @@ function loginForm() {
 function AccountPage() {
     const accountBtn = document.getElementById('AccountBtn');
     document.getElementById('CreateAccountPage').style.display = 'block';
-    document.getElementById('logBtn').style.display = 'block';
+    document.getElementById('logBtn').style.display = 'none';
     accountBtn.style.display = 'none';
+    document.getElementById('LoginPage').style.display = 'none';
 }
 function AccountForm() {
     //if account exists dont login
