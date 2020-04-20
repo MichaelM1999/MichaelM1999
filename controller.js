@@ -19,11 +19,15 @@ function submitBtn (buttonId) {
         current: document.getElementById(funcId.current).value,
         user: sessionStorage.getItem("username")
     }
+    if (Goals.name === '' || Goals.Quantity === '' || Goals.units === '' || Goals.units === '' || Goals.current === ''){
+        window.alert("Must fill in Goal completly to graph");
+    } else {
+        changeHTML(funcId);
+        LoadChart(funcId, Goals);
+        goalPost(funcId);
+        console.log(funcId);
+    }
 
-    changeHTML(funcId);
-    LoadChart(funcId, Goals);
-    goalPost(funcId);
-    console.log(funcId);
 }
 function changeHTML (funcId) {
     let GoalName = document.getElementById(funcId.input).value;
@@ -152,6 +156,13 @@ function userCreate (userInfo) {
     axios.post(uri + '/user/create', userInfo)
     .then(res => {
         console.log(res);
+        document.getElementById('CreateAccountPage').style.display = 'none';
+        document.getElementById('MainPage').style.display = 'block';
+        sessionStorage.setItem("Username", userInfo.username);
+        sessionStorage.setItem("Password", userInfo.password);
+        document.getElementById("WelcomeTxt").style.display = 'block';
+        document.getElementById("WelcomeTxt").innerHTML = "Welcome " + userInfo.username;
+
     })
     .catch(error => console.error(error.response));
 }
