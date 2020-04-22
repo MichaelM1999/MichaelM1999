@@ -109,6 +109,10 @@ right: 0;
     padding: 10px;
     margin-left: 40%;
 }
+#viewProfile {
+    width: 20%;
+    margin-left: 40%;
+}
 .goalform {
     text-align: center;
     background-color: lightblue;
@@ -119,3 +123,4 @@ right: 0;
     margin-left: 35%;
     margin-top: 3px;
 }
+

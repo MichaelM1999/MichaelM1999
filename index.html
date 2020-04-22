@@ -18,6 +18,7 @@
         <button id="logBtn" class="btns" type="button" onclick="logInPage()" style="display: block;"><span>Log-In</span></button>
         <button id="AccountBtn" class="btns" type="button" onclick="AccountPage()" style="display: block;"><span>Create Account</span></button>
         <h2 class="Welcome" id="WelcomeTxt" style="display: none;"></h2>
+        <button id="viewProfile" class="btns" type="button" onclick="viewProfile()" style="display: none;"><span>View Profile</span></button>
     </nav>
         <div class="container" id="LoginPage" style="display: none;">
             <div class="row">
@@ -96,11 +97,26 @@
         <div class="container" id="userInfoPage" style="display: none;">
             <div class="row">
                 <div class="col">
-                    <h2 class="userTitle"></h2>
-                    <!-- two colum one side has username and a picture box, the other side has a bio when filled out,
-                    before being filled out its a form that asks for password confirmation then a bio and a picture link -->
+                    <h2 class="userTitle title" id="userTitle"></h2>
                     </div>
                 </div>
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <div class="row">
+                        <div class="col pictureBox" id="pictureBox">
+                            <p class="notaval" id="NoImage">No Image</p>
+                            <img id="IMAGE" src="" alt="NO IMAGE" height="40%" width="40%" style="display: none;" >
+                        </div>
+                    </div>
+                </div>
+                    <div class="col" style="text-align: center;">
+                        <p class="notaval" id="NO BIO">No Bio</p>
+                        <div class="row">
+                            <div class="col BIO" id="BIO" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 </body>

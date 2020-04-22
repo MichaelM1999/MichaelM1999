@@ -93,6 +93,7 @@ function loginForm() {
         document.getElementById("MainPage").style.display = 'block';
         document.getElementById("WelcomeTxt").style.display = 'block';
         document.getElementById("WelcomeTxt").innerHTML = "Welcome " + username;
+        document.getElementById("viewProfile").style.display = 'inline';
         userLoginInfo(userInfo);
     }
 }
@@ -148,6 +149,16 @@ function logoutB() {
     document.getElementById("LoginPage").style.display = 'block';
     document.getElementById("WelcomeTxt").innerHTML = "";
     document.getElementById("WelcomeTxt").style.display = 'none';
+    document.getElementById("viewProfile").style.display = 'none';
+}
+function viewProfile() {
+    let user = sessionStorage.getItem("Username");
+    document.getElementById("WelcomeTxt").style.display = 'none';
+    document.getElementById("WelcomeTxt").innerHTML = "";
+    document.getElementById("viewProfile").style.display = 'none';
+    document.getElementById('MainPage').style.display = 'none';
+    document.getElementById("userInfoPage").style.display = 'block';
+    document.getElementById("userTitle").innerHTML = user
 }
 //backend functions
 //create user needs wiring
@@ -162,6 +173,7 @@ function userCreate (userInfo) {
         sessionStorage.setItem("Password", userInfo.password);
         document.getElementById("WelcomeTxt").style.display = 'block';
         document.getElementById("WelcomeTxt").innerHTML = "Welcome " + userInfo.username;
+        document.getElementById("viewProfile").style.display = 'inline';
 
     })
     .catch(error => console.error(error.response));
