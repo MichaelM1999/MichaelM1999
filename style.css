@@ -109,6 +109,20 @@ right: 0;
     padding: 10px;
     margin-left: 40%;
 }
+#updateUserInfo {
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+    margin-left: 40%;
+}
+#userUpdateForm {
+    z-index: 1;
+    width: 60%;
+    margin-left: 20%;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
 #viewProfile {
     width: 20%;
     margin-left: 40%;
