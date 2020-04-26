@@ -170,6 +170,8 @@ function updateUserInfo() {
 function SubmitUpdates() {
     let username = sessionStorage.getItem('Username');
     let password = sessionStorage.getItem('Password');
+    document.getElementById('BIO').style.display = 'none';
+    document.getElementById('IMAGE').style.display = 'none';
     let bio = document.getElementById('userBioUpdate').value;
     let url = document.getElementById('userPicUrl').value;
     let user = {
@@ -180,6 +182,7 @@ function SubmitUpdates() {
     }
     console.log(user);
     UserUpdateData(user);
+    
 }
 //backend functions
 //create user needs wiring
@@ -219,6 +222,12 @@ function UserUpdateData (user) {
     axios.post(uri + '/user/update', user)
     .then(res => {
         console.log(res);
+        document.getElementById('BIO').style.display = 'block';
+        document.getElementById("BIO").innerHTML = user.bio;
+        document.getElementById('IMAGE').style.display = 'block';
+        document.getElementById('IMAGE').src = user.url;
+        document.getElementById('userUpdateForm').style.display = 'none';
+        document.getElementById('updateUserInfo').style.display = 'block';
     })
     .catch(error => console.error(error.response));
 }
