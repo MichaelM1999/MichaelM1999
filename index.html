@@ -110,7 +110,7 @@
                     </div>
                 </div>
                     <div class="col" style="text-align: center;">
-                        <p class="notaval" id="NO BIO">No Bio</p>
+                        <p class="notaval" id="NOBIO">No Bio</p>
                         <div class="row">
                             <div class="col BIO" id="BIO" style="display: none;"></div>
                         </div>
@@ -130,8 +130,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input id="userPicUrl" class="goalInp" name="userPicUrl" placeholder="picture Url" type="text">
-                        <input id="userBioUpdate" class="goalInp" name="userBioUpdate" placeholder="Bio" type="text" maxlength="360">
+                        <form id="userUpdateForm" class="landingForms">
+                            <input id="userPicUrl" class="goalInp" name="userPicUrl" placeholder="picture Url" type="text" style="margin-bottom: 5px; width: 75%;"><br>
+                            <textarea id="userBioUpdate" class="goalInp" name="userBioUpdate" placeholder="Bio" type="text"  cols="50" rows="10" style="width: 75%;"></textarea><br>
+                            <button class="btns" id="updateFormSub" type="button" name="Update" onclick="SubmitUpdates()"><span>Update</span></button>
+                        </form>
                     </div>
                 </div>
             </div>

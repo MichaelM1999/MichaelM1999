@@ -160,6 +160,27 @@ function viewProfile() {
     document.getElementById("userInfoPage").style.display = 'block';
     document.getElementById("userTitle").innerHTML = user
 }
+function updateUserInfo() {
+    document.getElementById("NoImage").style.display = 'none';
+    document.getElementById("NOBIO").style.display = 'none';
+    document.getElementById("userUpdateForm").style.display = 'block';
+    document.getElementById('updateUserInfo').style.display = 'none';
+
+}
+function SubmitUpdates() {
+    let username = sessionStorage.getItem('Username');
+    let password = sessionStorage.getItem('Password');
+    let bio = document.getElementById('userBioUpdate').value;
+    let url = document.getElementById('userPicUrl').value;
+    let user = {
+        username: username,
+        password: password,
+        bio: bio,
+        url: url
+    }
+    console.log(user);
+    UserUpdateData(user);
+}
 //backend functions
 //create user needs wiring
 function userCreate (userInfo) {
@@ -189,6 +210,13 @@ function userLoginInfo (userInfo) {
 //user add goal 
 function goalPost (goal) {
     axios.post(uri + '/goal/add', goal)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(error => console.error(error.response));
+}
+function UserUpdateData (user) {
+    axios.post(uri + '/user/update', user)
     .then(res => {
         console.log(res);
     })

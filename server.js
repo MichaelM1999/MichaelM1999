@@ -33,6 +33,11 @@ router.route('/goal/add').post((req, res) => {
     console.log(req.body);
     res.send("goal recieved " + req.body);
 })
+
+router.route('/user/update').post((req, res) => {
+    console.log(req.body);
+    res.send("user recieved " + req.body);
+})
 //test route
 router.route('/foo').post((req, res) => {
 console.log('foo route');
