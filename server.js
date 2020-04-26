@@ -36,6 +36,7 @@ router.route('/goal/add').post((req, res) => {
 
 router.route('/user/update').post((req, res) => {
     console.log(req.body);
+    //res send needs to include exhisting url or bio if one is not provided and update existing if one is there and the other isn't
     res.send("user recieved " + req.body);
 })
 //test route

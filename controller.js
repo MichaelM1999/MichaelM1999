@@ -163,6 +163,8 @@ function viewProfile() {
 function updateUserInfo() {
     document.getElementById("NoImage").style.display = 'none';
     document.getElementById("NOBIO").style.display = 'none';
+    document.getElementById('BIO').style.display = 'none';
+    document.getElementById('IMAGE').style.display = 'none';
     document.getElementById("userUpdateForm").style.display = 'block';
     document.getElementById('updateUserInfo').style.display = 'none';
 
@@ -182,7 +184,6 @@ function SubmitUpdates() {
     }
     console.log(user);
     UserUpdateData(user);
-    
 }
 //backend functions
 //create user needs wiring
@@ -218,9 +219,11 @@ function goalPost (goal) {
     })
     .catch(error => console.error(error.response));
 }
+//update user bio and image
 function UserUpdateData (user) {
     axios.post(uri + '/user/update', user)
     .then(res => {
+        //if only one is returned make sure the old one stays
         console.log(res);
         document.getElementById('BIO').style.display = 'block';
         document.getElementById("BIO").innerHTML = user.bio;
